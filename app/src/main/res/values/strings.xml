@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">NavigationBar</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Settings</string>
+
+    <string name="home_second">Home Second</string>
+    <string name="this_is_settings_menu">This is settings menu</string>
+    <string name="input_text_here">Input text here</string>
+</resources>
