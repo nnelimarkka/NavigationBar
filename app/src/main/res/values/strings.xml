@@ -8,6 +8,38 @@
     <string name="menu_gallery">Settings</string>
 
     <string name="home_second">Home Second</string>
-    <string name="this_is_settings_menu">This is settings menu</string>
+    <string name="this_is_settings_menu">Settings menu</string>
     <string name="input_text_here">Input text here</string>
+    <string name="text_alignment">Text alignment:</string>
+    <string name="text_size">Text size:</string>
+    <string name="text_color">Text color:</string>
+    <string name="typeface_style">Typeface style:</string>
+
+    <string-array name="alignment">
+        <item>Left</item>
+        <item>Center</item>
+        <item>Right</item>
+    </string-array>
+
+    <string-array name="text_size">
+        <item>10sp</item>
+        <item>12sp</item>
+        <item>14sp</item>
+        <item>18sp</item>
+        <item>24sp</item>
+    </string-array>
+
+    <string-array name="text_color">
+        <item>black</item>
+        <item>green</item>
+        <item>yellow</item>
+        <item>red</item>
+    </string-array>
+
+    <string-array name="typeface">
+        <item>normal</item>
+        <item>sans</item>
+        <item>serif</item>
+        <item>monospace</item>
+    </string-array>
 </resources>
