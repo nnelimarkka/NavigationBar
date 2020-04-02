@@ -9,11 +9,14 @@
 
     <string name="home_second">Home Second</string>
     <string name="this_is_settings_menu">Settings menu</string>
-    <string name="input_text_here">Input text here</string>
+    <string name="textField1">textfield 1 input</string>
+    <string name="textField2">textfield 2 input</string>
     <string name="text_alignment">Text alignment:</string>
     <string name="text_size">Text size:</string>
     <string name="text_color">Text color:</string>
     <string name="typeface_style">Typeface style:</string>
+    <string name="text_input_disabled">Disable textfield 1 editing:</string>
+    <string name="yes">yes</string>
 
     <string-array name="alignment">
         <item>Left</item>

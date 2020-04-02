@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,6 +24,7 @@ public class SettingsFragment extends Fragment {
     private Spinner size;
     private Spinner color;
     private Spinner typeface;
+    private CheckBox checkBox;
     private String textSize, textColor, textAlignment, textTypeface;
     private Settings settings;
 
@@ -39,6 +42,7 @@ public class SettingsFragment extends Fragment {
         size = (Spinner) v.findViewById(R.id.spinner2);
         color = (Spinner) v.findViewById(R.id.spinner3);
         typeface = (Spinner) v.findViewById(R.id.spinner4);
+        checkBox = (CheckBox) v.findViewById(R.id.checkBox);
 
         ArrayAdapter<String> alignmentAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.alignment));
         alignmentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -102,6 +106,18 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        checkBox.setChecked(settings.getEditPermit());
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked == true) {
+                    settings.setEditPermit(true);
+                }
+                else {
+                    settings.setEditPermit(false);
+                }
             }
         });
     }

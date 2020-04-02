@@ -3,6 +3,7 @@ package my.app.navigationbar.ui.home;
 public class Settings {
     private static Settings settings = new Settings();
     private String textSize = "", textColor = "", textAlignment = "", typeface = "";
+    private boolean editNotAllowed = false;
 
     private Settings() {
     }
@@ -41,5 +42,13 @@ public class Settings {
 
     public String getTypeface() {
         return(typeface);
+    }
+
+    public void setEditPermit (boolean s) {
+        editNotAllowed = s;
+    }
+
+    public boolean getEditPermit() {
+        return(editNotAllowed);
     }
 }
