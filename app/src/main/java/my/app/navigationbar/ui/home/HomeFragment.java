@@ -29,8 +29,9 @@ public class HomeFragment extends Fragment {
     private EditText editText2;
     private String text;
     private String text2;
+    private TextView textView;
     private boolean editNotAllowed;
-    private String textSize, textColor, textAlignment, typeface;
+    private String textSize, textColor, textAlignment, typeface, displayText;
     private int blackColor = Color.BLACK;
     private int redColor = Color.RED;
     private int greenColor = Color.GREEN;
@@ -53,7 +54,10 @@ public class HomeFragment extends Fragment {
         textColor = settings.getTextColor();
         textSize = settings.getTextSize();
         typeface = settings.getTypeface();
+        displayText = settings.getDisplayText();
         editNotAllowed = settings.getEditPermit();
+        textView = (TextView) v.findViewById(R.id.textView7);
+        textView.setText(displayText);
         switch (textAlignment) {
             case "Left":
                 editText.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);

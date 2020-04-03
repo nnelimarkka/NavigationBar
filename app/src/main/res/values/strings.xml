@@ -17,6 +17,9 @@
     <string name="typeface_style">Typeface style:</string>
     <string name="text_input_disabled">Disable textfield 1 editing:</string>
     <string name="yes">yes</string>
+    <string name="display_text">display text</string>
+    <string name="language">Language:</string>
+    <string name="save">Save</string>
 
     <string-array name="alignment">
         <item>Left</item>
@@ -44,5 +47,11 @@
         <item>sans</item>
         <item>serif</item>
         <item>monospace</item>
+    </string-array>
+
+    <string-array name="text_language">
+        <item>English</item>
+        <item>Finnish</item>
+        <item>Swedish</item>
     </string-array>
 </resources>

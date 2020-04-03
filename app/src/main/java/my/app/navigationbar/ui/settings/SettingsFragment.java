@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -24,9 +26,12 @@ public class SettingsFragment extends Fragment {
     private Spinner size;
     private Spinner color;
     private Spinner typeface;
+    private Spinner language;
     private CheckBox checkBox;
-    private String textSize, textColor, textAlignment, textTypeface;
+    private EditText editText;
+    private String textSize, textColor, textAlignment, textTypeface, displayText;
     private Settings settings;
+    private Button save;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -43,6 +48,14 @@ public class SettingsFragment extends Fragment {
         color = (Spinner) v.findViewById(R.id.spinner3);
         typeface = (Spinner) v.findViewById(R.id.spinner4);
         checkBox = (CheckBox) v.findViewById(R.id.checkBox);
+        language = (Spinner) v.findViewById(R.id.spinner5);
+        save = (Button) v.findViewById(R.id.button);
+
+        editText = (EditText) v.findViewById(R.id.editText3);
+        displayText = settings.getDisplayText();
+        if (displayText.length() > 0) {
+            editText.setText(displayText);
+        }
 
         ArrayAdapter<String> alignmentAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.alignment));
         alignmentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -109,6 +122,19 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        ArrayAdapter<String> languageAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.text_language));
+        languageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        language.setAdapter(languageAdapter);
+        language.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
         checkBox.setChecked(settings.getEditPermit());
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -118,6 +144,14 @@ public class SettingsFragment extends Fragment {
                 else {
                     settings.setEditPermit(false);
                 }
+            }
+        });
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayText = editText.getText().toString();
+                settings.setDisplayText(displayText);
             }
         });
     }
