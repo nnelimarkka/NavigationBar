@@ -1,6 +1,11 @@
 package my.app.navigationbar;
 
+import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.se.omapi.Session;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 
 import com.google.android.material.navigation.NavigationView;
@@ -13,13 +18,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
+    private Context context;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        context = MainActivity.this;
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

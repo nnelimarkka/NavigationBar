@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">NavigaatioPalkki</string>
+    <string name="navigation_drawer_open">Avaa navigaatio palkki</string>
+    <string name="navigation_drawer_close">Sulje navigaatio palkki</string>
+    <string name="nav_header_desc">Navigaatio otsikko</string>
+
+    <string name="menu_home">Koti</string>
+    <string name="menu_gallery">Asetukset</string>
+
+    <string name="home_second">Toissijainen koti</string>
+    <string name="this_is_settings_menu">Asetus valikko</string>
+    <string name="textField1">tekstikenttä 1</string>
+    <string name="textField2">tekstikenttä 2</string>
+    <string name="text_alignment">Tekstin tasaus:</string>
+    <string name="text_size">Fonttikoko:</string>
+    <string name="text_color">Tekstin väri:</string>
+    <string name="typeface_style">Tekstin tyyli:</string>
+    <string name="text_input_disabled">Estä tekstikentän 1 muokkaus:</string>
+    <string name="yes">kyllä</string>
+    <string name="display_text">Näyttö teksti</string>
+    <string name="language">Kieli:</string>
+    <string name="save">Tallenna</string>
+
+    <string-array name="alignment">
+        <item>Vasemmalle</item>
+        <item>Keskelle</item>
+        <item>Oikealle</item>
+    </string-array>
+
+    <string-array name="text_size">
+        <item>10sp</item>
+        <item>12sp</item>
+        <item>14sp</item>
+        <item>18sp</item>
+        <item>24sp</item>
+    </string-array>
+
+    <string-array name="text_color">
+        <item>Musta</item>
+        <item>Vihreä</item>
+        <item>Keltainen</item>
+        <item>Punainen</item>
+    </string-array>
+
+    <string-array name="typeface">
+        <item>Normaali</item>
+        <item>sans</item>
+        <item>serif</item>
+        <item>monospace</item>
+    </string-array>
+
+    <string-array name="text_language">
+        <item>Englanti</item>
+        <item>Suomi</item>
+        <item>Ruotsi</item>
+    </string-array>
+</resources>

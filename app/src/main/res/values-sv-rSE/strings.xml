@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">NavigationBar</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Hem</string>
+    <string name="menu_gallery">Inställningar</string>
+
+    <string name="home_second">Home Second</string>
+    <string name="this_is_settings_menu">Inställningsmenyn</string>
+    <string name="textField1">textfield 1 inmatning</string>
+    <string name="textField2">textfield 2 inmatning</string>
+    <string name="text_alignment">Textjustering:</string>
+    <string name="text_size">Text storlek:</string>
+    <string name="text_color">Text färg:</string>
+    <string name="typeface_style">Typsnitt stil:</string>
+    <string name="text_input_disabled">Avhålla textfield 1 skrivning:</string>
+    <string name="yes">Ja</string>
+    <string name="display_text">dataskärm text</string>
+    <string name="language">Språk:</string>
+    <string name="save">Registrera</string>
+
+    <string-array name="alignment">
+        <item>vänster</item>
+        <item>mitt</item>
+        <item>höger</item>
+    </string-array>
+
+    <string-array name="text_size">
+        <item>10sp</item>
+        <item>12sp</item>
+        <item>14sp</item>
+        <item>18sp</item>
+        <item>24sp</item>
+    </string-array>
+
+    <string-array name="text_color">
+        <item>svart</item>
+        <item>grön</item>
+        <item>gul</item>
+        <item>röd</item>
+    </string-array>
+
+    <string-array name="typeface">
+        <item>vanligt</item>
+        <item>sans</item>
+        <item>serif</item>
+        <item>monospace</item>
+    </string-array>
+
+    <string-array name="text_language">
+        <item>Engelska</item>
+        <item>Finska</item>
+        <item>Svenska</item>
+    </string-array>
+</resources>

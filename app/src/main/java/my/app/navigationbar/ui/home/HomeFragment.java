@@ -1,6 +1,7 @@
 package my.app.navigationbar.ui.home;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -19,12 +20,15 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import java.util.Locale;
+
 import my.app.navigationbar.R;
 import my.app.navigationbar.SavedString;
 
 public class HomeFragment extends Fragment {
     private SavedString saved;
     private Settings settings;
+    private SpinnerPositions spinnerPositions;
     private EditText editText;
     private EditText editText2;
     private String text;
@@ -32,6 +36,7 @@ public class HomeFragment extends Fragment {
     private TextView textView;
     private boolean editNotAllowed;
     private String textSize, textColor, textAlignment, typeface, displayText;
+    private int colorInteger, alignmentInteger, typefaceInteger;
     private int blackColor = Color.BLACK;
     private int redColor = Color.RED;
     private int greenColor = Color.GREEN;
@@ -42,6 +47,7 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
        saved = SavedString.getInstance();
        settings = Settings.getInstance();
+       spinnerPositions = SpinnerPositions.getInstance();
        text = saved.getSavedString(1);
        text2 = saved.getSavedString(2);
        return(v);
@@ -56,38 +62,41 @@ public class HomeFragment extends Fragment {
         typeface = settings.getTypeface();
         displayText = settings.getDisplayText();
         editNotAllowed = settings.getEditPermit();
+        alignmentInteger = spinnerPositions.getAlignmentPosition();
+        colorInteger = spinnerPositions.getColorPosition();
+        typefaceInteger = spinnerPositions.getTypefacePosition();
         textView = (TextView) v.findViewById(R.id.textView7);
         textView.setText(displayText);
-        switch (textAlignment) {
-            case "Left":
+        switch (alignmentInteger) {
+            case 0:
                 editText.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
                 editText2.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
                 break;
-            case "Center":
+            case 1:
                 editText.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 editText2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 break;
-            case "Right":
+            case 2:
                 editText.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
                 editText2.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
                 break;
             default:
                 break;
         }
-        switch (textColor) {
-            case "black":
+        switch (colorInteger) {
+            case 0:
                 editText.setTextColor(blackColor);
                 editText2.setTextColor(blackColor);
                 break;
-            case "green":
+            case 1:
                 editText.setTextColor(greenColor);
                 editText2.setTextColor(greenColor);
                 break;
-            case "yellow":
+            case 2:
                 editText.setTextColor(yellowColor);
                 editText2.setTextColor(yellowColor);
                 break;
-            case "red":
+            case 3:
                 editText.setTextColor(redColor);
                 editText2.setTextColor(redColor);
                 break;
@@ -118,20 +127,20 @@ public class HomeFragment extends Fragment {
             default:
                 break;
         }
-        switch (typeface) {
-            case "normal":
+        switch (typefaceInteger) {
+            case 0:
                 editText.setTypeface(Typeface.DEFAULT);
                 editText2.setTypeface(Typeface.DEFAULT);
                 break;
-            case "sans":
+            case 1:
                 editText.setTypeface(Typeface.SANS_SERIF);
                 editText2.setTypeface(Typeface.SANS_SERIF);
                 break;
-            case "serif":
+            case 2:
                 editText.setTypeface(Typeface.SERIF);
                 editText2.setTypeface(Typeface.SERIF);
                 break;
-            case "monospace":
+            case 3:
                 editText.setTypeface(Typeface.MONOSPACE);
                 editText2.setTypeface(Typeface.MONOSPACE);
                 break;
